@@ -18,15 +18,16 @@ print("la moyenne de l'élève 1 = ",moy1)
 y=(13,13,12)
 print(statistics.mean(y))
 
-def moyenne_tuples(notes,eleve,matiere):
-  s=0
-  i = 0
-  for x in notes:
-    if x[0] == eleve and x[1]== matiere:
-      s+=x[2]
-      i+=1
-  moy = s / i
-  return moy
+notes_elv1 = [note for note in notes if note[0] == 'eleve1']
+notes_elv1_maths = [n for n in notes_elv1 if n[1] == 'math']
+print(notes_elv1_maths)
+print(sum(n[2] for n in notes_elv1_maths)/len(notes_elv1_maths))
+
+def moyenne_tuples(notes, eleve = None, matiere = None):
+  notes_elv = [note for note in notes if note[0] == eleve] if eleve is not None else notes
+  notes_elv_matiere = [n for n in notes_elv if n[1] == matiere] if matiere is not None else notes_elv
+
+  return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
 
 print(moyenne_tuples(notes,'eleve1','math'))
 
@@ -41,15 +42,15 @@ print(moyenne_tuples(notes,'eleve1','math'))
 
 #Que se passe-t-il si on a un triplet qui n'est pas du tout une note ?
 #Problème d'integer car ce n'est pas possible de faire une moyenne sans une note
-
-liste notes_enregistrées=[]
+notes_enregistrees = []
 
 class Note:
   def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
     self.eleve = eleve
     self.matiere = matiere
     self.valeur = valeur
-
+    notes_enregistrees.append(self)
+#Question 6
   def __str__(self):
     return "La note est de {self.valeur} pour l'{self.eleve} en {self.matiere}.".format(self=self)
 
@@ -62,22 +63,28 @@ print(onote.eleve)
 print(onote.matiere)
 print(onote.valeur)
 Note.afficher(onote)
+print(onote)
 
-onotes=[]
-for i in notes:
-  onotes.append(Note(notes[0],notes[1],notes[2]))
-print(onotes)
+#Question 5
+onotes = [Note(elv, matiere,  valeur) for elv, matiere, valeur in notes]
+for onote in onotes:
+  onote.afficher()
 
-ma_note=Note('eleve1', 'math', 13)
-print(ma_note)
+#Question 7
+for onote in notes_enregistrees:
+  onote.afficher()
 
-def moyenne_Notes(notes,eleve,matiere):
-  s=0
-  for x in Note:
-    if self.eleve == eleve and self.matiere== matiere:
-      s+= self.valeur
-  moy = s / i
-  return moy
+#Question 8
+
+def moyenne_Notes(liste, eleve = None, matiere = None):
+  liste_elv = [note for note in liste if note.eleve == eleve] if eleve is not None else liste
+  liste_elv_matiere = [le for le in liste_elv if le.matiere == matiere] if matiere is not None else liste_elv
+
+  return sum([n.valeur for n in liste_elv_matiere])/len(liste_elv_matiere)
+  
 
 
+print(moyenne_Notes(notes_enregistrees))
+
+#Question 9
 

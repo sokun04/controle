@@ -78,3 +78,6 @@ def moyenne_Notes(notes,eleve,matiere):
       s+= self.valeur
   moy = s / i
   return moy
+
+
+

@@ -16,27 +16,18 @@ self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
         except:
            assert False
         try:
->           Note.vider()
-E           AttributeError: type object 'Note' has no attribute 'vider'
-
-test_16_03.py:98: AttributeError
-
-During handling of the above exception, another exception occurred:
-
-self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
-
-    def test_10(self):
-        try:
-            from .main  import Note
-        except:
-           assert False
-        try:
             Note.vider()
         except:
->           assert False
-E           AssertionError: assert False
+            assert False
+        note1 = Note('elv1', 'xx', 12)
+        note1 = Note('elv1', 'yy', 13)
+        note1 = Note('elv1', 'yy', 14)
+        note1 = Note('elv2', 'zz', 13)
+        try:
+>           assert Note.moyenne('elv1') == 13
+E           AttributeError: type object 'Note' has no attribute 'moyenne'
 
-test_16_03.py:100: AssertionError
+test_16_03.py:106: AttributeError
 ----------------------------- Captured stdout call -----------------------------
 [('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12)]
 13.0
@@ -67,5 +58,5 @@ eleve eleve2 matiere math note 13
 eleve eleve2 matiere math note 14
 13.11111111111111
 =========================== short test summary info ============================
-FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: assert False
-========================= 1 failed, 6 passed in 0.06s ==========================
+FAILED test_16_03.py::Test1603sute::test_10 - AttributeError: type object 'No...
+========================= 1 failed, 6 passed in 0.07s ==========================

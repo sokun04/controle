@@ -59,4 +59,4 @@ eleve eleve2 matiere math note 14
 13.11111111111111
 =========================== short test summary info ============================
 FAILED test_16_03.py::Test1603sute::test_10 - AttributeError: type object 'No...
-========================= 1 failed, 6 passed in 0.07s ==========================
+========================= 1 failed, 6 passed in 0.05s ==========================

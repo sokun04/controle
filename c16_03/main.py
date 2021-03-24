@@ -49,6 +49,10 @@ class Note:
   def afficher(self):
     print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
   
+  @classmethod
+  def vider(cls):
+    cls.instances = []
+  
 
 
 

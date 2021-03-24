@@ -12,17 +12,18 @@ note8 = ('eleve2', 'math', 14)
 notes = [note1, note2, note3, note4, note5, note6,note7,note8]
 
 
-#4
-moy1 = (notes[0][2]+notes[1][2]+notes[2][2]+notes[3][2]+notes[4][2]+notes[5][2])/6
-print("la moyenne de l'élève 1 = ",moy1)
-y=(13,13,12)
-print(statistics.mean(y))
+#4 a)
+notes_elv1 = [note for note in notes if note[0] == 'eleve1']
+print(notes_elv1)
+print(sum(note[2] for note in notes_elv1)/len(notes_elv1))
 
+#b)
 notes_elv1 = [note for note in notes if note[0] == 'eleve1']
 notes_elv1_maths = [n for n in notes_elv1 if n[1] == 'math']
 print(notes_elv1_maths)
 print(sum(n[2] for n in notes_elv1_maths)/len(notes_elv1_maths))
 
+#c)
 def moyenne_tuples(notes, eleve = None, matiere = None):
   notes_elv = [note for note in notes if note[0] == eleve] if eleve is not None else notes
   notes_elv_matiere = [n for n in notes_elv if n[1] == matiere] if matiere is not None else notes_elv
@@ -31,31 +32,31 @@ def moyenne_tuples(notes, eleve = None, matiere = None):
 
 print(moyenne_tuples(notes,'eleve1','math'))
 
-#Que se passe-t-il si on fait une faute de frappe dans la saisie d'une matière ?
-# Le shell ne trouve pas la matière et signale une erreur de syntaxe
 
-#Que se passe-t-il si quelqu'un rentre une chaine de caractère au lieu d'une nombre '14' au lieu de 14 ?
-#chaine de caractère pas définie
-
-#Que se passe-t-il si on veut ajouter des coefficient aux notes et aux matières ?
-#Ca ne marchera pas car on a pas rentré de paramètre pour les coefficients dans la fonction moyenne_tuples
-
-#Que se passe-t-il si on a un triplet qui n'est pas du tout une note ?
-#Problème d'integer car ce n'est pas possible de faire une moyenne sans une note
 notes_enregistrees = []
 
 class Note:
+  instances = []  
   def __init__(self, eleve, matiere, valeur): #La méthode pour créer un objet
     self.eleve = eleve
     self.matiere = matiere
     self.valeur = valeur
     notes_enregistrees.append(self)
-#Question 6
+
   def __str__(self):
     return "La note est de {self.valeur} pour l'{self.eleve} en {self.matiere}.".format(self=self)
 
   def afficher(self):
     print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
+  
+  @classmethod #attention !
+  def vider(cls):
+    cls.instances = []
+
+  @classmethod #attention !
+  def moyenne(cls):
+    return(sum(n.valeur for n in cls.instances)/len(cls.instances))
+
 
 
 onote = Note('eleve1', 'maths', 13)

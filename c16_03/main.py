@@ -24,13 +24,13 @@ print(notes_elv1_maths)
 print(sum(n[2] for n in notes_elv1_maths)/len(notes_elv1_maths))
 
 #c)
-def moyenne_tuples(notes, eleve = None, matiere = None):
+def moyenne_tuple(notes, eleve = None, matiere = None):
   notes_elv = [note for note in notes if note[0] == eleve] if eleve is not None else notes
   notes_elv_matiere = [n for n in notes_elv if n[1] == matiere] if matiere is not None else notes_elv
 
   return sum([n[2] for n in notes_elv_matiere])/len(notes_elv_matiere)
 
-print(moyenne_tuples(notes,'eleve1','math'))
+print(moyenne_tuple(notes,'eleve1','math'))
 
 
 notes_enregistrees = []
@@ -59,7 +59,7 @@ class Note:
 
 
 
-onote = Note('eleve1', 'maths', 13)
+onote = Note('eleve1', 'math', 13)
 print(onote.eleve)
 print(onote.matiere)
 print(onote.valeur)

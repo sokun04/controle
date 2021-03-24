@@ -3,7 +3,7 @@ platform linux -- Python 3.9.2, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
 rootdir: /home/stidsem4/iut/2021/controle/victor.seng/c16_03
 collected 7 items
 
-test_16_03.py F.F...F                                                    [100%]
+test_16_03.py F......                                                    [100%]
 
 =================================== FAILURES ===================================
 _____________________________ Test1603sute.test_10 _____________________________
@@ -38,16 +38,16 @@ E           AssertionError: assert False
 
 test_16_03.py:100: AssertionError
 ----------------------------- Captured stdout call -----------------------------
-la moyenne de l'élève 1 =  13.0
-12.666666666666666
+[('eleve1', 'math', 13), ('eleve1', 'physique', 15), ('eleve1', 'math', 13), ('eleve1', 'eco', 12), ('eleve1', 'eco', 13), ('eleve1', 'math', 12)]
+13.0
 [('eleve1', 'math', 13), ('eleve1', 'math', 13), ('eleve1', 'math', 12)]
 12.666666666666666
 12.666666666666666
 eleve1
-maths
+math
 13
-eleve eleve1 matiere maths note 13
-La note est de 13 pour l'eleve1 en maths.
+eleve eleve1 matiere math note 13
+La note est de 13 pour l'eleve1 en math.
 eleve eleve1 matiere math note 13
 eleve eleve1 matiere physique note 15
 eleve eleve1 matiere math note 13
@@ -56,7 +56,7 @@ eleve eleve1 matiere eco note 13
 eleve eleve1 matiere math note 12
 eleve eleve2 matiere math note 13
 eleve eleve2 matiere math note 14
-eleve eleve1 matiere maths note 13
+eleve eleve1 matiere math note 13
 eleve eleve1 matiere math note 13
 eleve eleve1 matiere physique note 15
 eleve eleve1 matiere math note 13
@@ -66,63 +66,6 @@ eleve eleve1 matiere math note 12
 eleve eleve2 matiere math note 13
 eleve eleve2 matiere math note 14
 13.11111111111111
-_____________________________ Test1603sute.test_4 ______________________________
-
-self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
-
-    def test_4(self):
-        try:
->           from main import moyenne_tuples
-E           ModuleNotFoundError: No module named 'main'
-
-test_16_03.py:16: ModuleNotFoundError
-
-During handling of the above exception, another exception occurred:
-
-self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
-
-    def test_4(self):
-        try:
-            from main import moyenne_tuples
-        except ImportError:
-            try:
->               from .main import moyenne_tuple as moyenne_tuples
-E               ImportError: cannot import name 'moyenne_tuple' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/victor.seng/c16_03/main.py)
-
-test_16_03.py:19: ImportError
-
-During handling of the above exception, another exception occurred:
-
-self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
-
-    def test_4(self):
-        try:
-            from main import moyenne_tuples
-        except ImportError:
-            try:
-                from .main import moyenne_tuple as moyenne_tuples
-            except ImportError:
->               assert False, "moyenne_tuples non définie"
-E               AssertionError: moyenne_tuples non définie
-E               assert False
-
-test_16_03.py:21: AssertionError
-_____________________________ Test1603sute.test_9 ______________________________
-
-self = <c16_03.test_16_03.Test1603sute testMethod=test_9>
-
-    def test_9(self):
-        try:
-            from .main  import Note
-        except:
-           assert False
->       assert hasattr(Note, 'instances')
-E       AssertionError: assert False
-E        +  where False = hasattr(<class 'c16_03.main.Note'>, 'instances')
-
-test_16_03.py:90: AssertionError
 =========================== short test summary info ============================
 FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: assert False
-FAILED test_16_03.py::Test1603sute::test_4 - AssertionError: moyenne_tuples n...
-FAILED test_16_03.py::Test1603sute::test_9 - AssertionError: assert False
-========================= 3 failed, 4 passed in 0.06s ==========================
+========================= 1 failed, 6 passed in 0.09s ==========================

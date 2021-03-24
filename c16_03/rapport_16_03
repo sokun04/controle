@@ -1,0 +1,159 @@
+============================= test session starts ==============================
+platform linux -- Python 3.9.2, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: /home/stidsem4/iut/2021/controle/victor.seng/c16_03
+collected 7 items
+
+test_16_03.py F.FFFFF                                                    [100%]
+
+=================================== FAILURES ===================================
+_____________________________ Test1603sute.test_10 _____________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+>           from .main  import Note
+E           ImportError: cannot import name 'Note' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/victor.seng/c16_03/main.py)
+
+test_16_03.py:94: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+            from .main  import Note
+        except:
+>          assert False
+E          AssertionError: assert False
+
+test_16_03.py:96: AssertionError
+_____________________________ Test1603sute.test_4 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+>           from main import moyenne_tuples
+E           ModuleNotFoundError: No module named 'main'
+
+test_16_03.py:16: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+            from main import moyenne_tuples
+        except ImportError:
+            try:
+>               from .main import moyenne_tuple as moyenne_tuples
+E               ImportError: cannot import name 'moyenne_tuple' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/victor.seng/c16_03/main.py)
+
+test_16_03.py:19: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+            from main import moyenne_tuples
+        except ImportError:
+            try:
+                from .main import moyenne_tuple as moyenne_tuples
+            except ImportError:
+>               assert False, "moyenne_tuples non définie"
+E               AssertionError: moyenne_tuples non définie
+E               assert False
+
+test_16_03.py:21: AssertionError
+_____________________________ Test1603sute.test_5 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_5>
+
+    def test_5(self):
+        try:
+>           from .main  import Note, onotes
+E           ImportError: cannot import name 'Note' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/victor.seng/c16_03/main.py)
+
+test_16_03.py:33: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_5>
+
+    def test_5(self):
+        try:
+            from .main  import Note, onotes
+        except:
+>           assert False
+E           AssertionError: assert False
+
+test_16_03.py:35: AssertionError
+_____________________________ Test1603sute.test_6 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_6>
+
+    def test_6(self):
+>       from .main import Note, onotes
+E       ImportError: cannot import name 'Note' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/victor.seng/c16_03/main.py)
+
+test_16_03.py:41: ImportError
+_____________________________ Test1603sute.test_8 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_8>
+
+    def test_8(self):
+        try:
+>           from .main import Note
+E           ImportError: cannot import name 'Note' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/victor.seng/c16_03/main.py)
+
+test_16_03.py:67: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_8>
+
+    def test_8(self):
+        try:
+            from .main import Note
+        except ImportError:
+>           assert False, "import de Note impossible"
+E           AssertionError: import de Note impossible
+E           assert False
+
+test_16_03.py:69: AssertionError
+_____________________________ Test1603sute.test_9 ______________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_9>
+
+    def test_9(self):
+        try:
+>           from .main  import Note
+E           ImportError: cannot import name 'Note' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/victor.seng/c16_03/main.py)
+
+test_16_03.py:87: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_9>
+
+    def test_9(self):
+        try:
+            from .main  import Note
+        except:
+>          assert False
+E          AssertionError: assert False
+
+test_16_03.py:89: AssertionError
+=========================== short test summary info ============================
+FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: assert False
+FAILED test_16_03.py::Test1603sute::test_4 - AssertionError: moyenne_tuples n...
+FAILED test_16_03.py::Test1603sute::test_5 - AssertionError: assert False
+FAILED test_16_03.py::Test1603sute::test_6 - ImportError: cannot import name ...
+FAILED test_16_03.py::Test1603sute::test_8 - AssertionError: import de Note i...
+FAILED test_16_03.py::Test1603sute::test_9 - AssertionError: assert False
+========================= 6 failed, 1 passed in 0.10s ==========================

@@ -83,3 +83,6 @@ def moyenne_Notes(liste, eleve = None, matiere = None):
 
 
 print(moyenne_Notes(notes_enregistrees))
+
+onotes = [Note(*note) for note in notes]
+Note.vider()

@@ -49,13 +49,6 @@ class Note:
   def afficher(self):
     print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
   
-  @classmethod #attention !
-  def vider(cls):
-    cls.instances = []
-
-  @classmethod #attention !
-  def moyenne(cls):
-    return(sum(n.valeur for n in cls.instances)/len(cls.instances))
 
 
 
